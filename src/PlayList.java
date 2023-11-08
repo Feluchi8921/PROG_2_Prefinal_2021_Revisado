@@ -54,7 +54,12 @@ public class PlayList extends Video{
     public ArrayList<String> getPalabrasClaves(){
         ArrayList<String> listarPalabrasClaves = new ArrayList<>();
         for (Elemento e: elementos) {
-            listarPalabrasClaves.addAll(e.getPalabrasClaves());
+            ArrayList<String> aux = e.getPalabrasClaves();
+            for(String a : aux) {
+                if (!listarPalabrasClaves.contains(a)) {
+                    listarPalabrasClaves.add(a);
+                }
+            }
         }
         return listarPalabrasClaves;
         
